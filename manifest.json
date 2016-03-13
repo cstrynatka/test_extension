@@ -1,0 +1,21 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "Entrance of the RoFo",
+  "description": "This extension will play 'Entrance of the Gladiators' whenever it detects that you're reading an article about Rob Ford.",
+  "version": "0.3",
+  "background" : {
+		"page" : "background.html"
+  }, 
+"icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
+  "content_scripts": [
+    {
+		"run_at" : "document_end",
+        "matches": ["http://*/*"],
+        "js": ["contentScript.js"]
+	}
+  ]
+}
